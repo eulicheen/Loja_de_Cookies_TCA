@@ -1,1 +1,31 @@
-/*elementos base do html */
+/*elementos base do html*/
+
+body{
+    background-color: #f2d489;
+}
+
+input{
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+input:hover{
+    color: #774f17;
+}
+
+button{
+    background-color: #774f17;
+    border: 3px solid #774f17;
+    border-radius: 15px;
+    padding: 10px;
+    width: 100%;
+    font-size: 15px;
+}
+
+button:hover{
+    background-color: #8e6226;
+    border-color: #8e6226;
+    color: #2c2c2c;
+}
