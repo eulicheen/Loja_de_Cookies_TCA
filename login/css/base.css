@@ -29,3 +29,8 @@ button:hover{
     border-color: #8e6226;
     color: #2c2c2c;
 }
+
+a{
+    color: #82510d;
+    font-size: 13px;
+}
