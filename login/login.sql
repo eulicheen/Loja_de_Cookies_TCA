@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS entrar;
-CREATE DATABASE entrar;
-\c entrar;
+DROP DATABASE IF EXISTS cadastro;
+CREATE DATABASE cadastro;
+\c cadastro;
 
 CREATE TABLE usuario(
     id SERIAL PRIMARY KEY,
@@ -39,3 +39,11 @@ CREATE TABLE cargo_permissoes(
     id_permissoes INT NOT NULL REFERENCES permissoes(id),
     PRIMARY KEY(id_cargo, id_permissoes)
 );
+
+INSERT INTO permissoes(codigo, descricao)
+VALUES
+()
+
+INSERT INTO cargo(cargo, nome, descricao)
+VALUES
+()
