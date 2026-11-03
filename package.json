@@ -1,0 +1,22 @@
+{
+  "name": "trabalho_conclusao_ano",
+  "version": "1.0.0",
+  "description": "Loja online que funciona como um cardápio, com sistema de login para clientes e administradores",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+
+    "url": "git+https://github.com/eulicheen/Loja_de_Cookies_TCA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eulicheen/Loja_de_Cookies_TCA/issues"
+  },
+  "homepage": "https://github.com/eulicheen/Loja_de_Cookies_TCA#readme"
+}

@@ -1,14 +1,21 @@
-const SUPABASE_URL = 'https://dlzbjomtmquobzwzzfot.supabase.co/rest/v1/';
-const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_UZujLvs6Ne2v5RtDVuN_iQ_dNOghJn4';
+import {SUPABASE_URL} from "./env.js";
+import {SUPABASE_PUBLISHABLE_KEY} from "./env.js";
 
-// LOGIN
-async function entrar() {
+// Cadastro
+async function cadastro() {
 
     try{
-    const resposta =
-        await fetch(
+    const registro = await fetch(
+        `${SUPABASE_URL}/rest/v1/usuarios?select=*`,
+        {
+          headers: {
+            apikey: SUPABASE_PUBLISHABLE_KEY,
+            Accept: 'application/json'
+          }
+        }
+      )
 
-        )
+      console.log(registro);
     }
     catch(erro) {
         'blabla'.textContent = `Não foi possível fazer login: ${erro.message}`
@@ -16,7 +23,7 @@ async function entrar() {
 }
 
 async function main() {
-
+    await cadastro();
 }
 
 

@@ -2,6 +2,18 @@ DROP DATABASE IF EXISTS cookies;
 CREATE DATABASE cookies;
 \c cookies;
 
+-- DROP TABLE estoque;
+-- DROP TABLE ingredientes;
+-- DROP TABLE produto;
+-- DROP TABLE pedido;
+-- DROP TABLE administrador;
+-- DROP TABLE usuario;
+-- DROP TABLE cargo_permissoes;
+-- DROP TABLE permissoes;
+-- DROP TABLE cargo;
+-- DROP TABLE cliente;
+
+
 CREATE TABLE cliente(
     id SERIAL PRIMARY KEY,
     nome VARCHAR(50) NOT NULL
@@ -176,3 +188,6 @@ VALUES
 ('17', '5'),
 ('18', '7'),
 ('19', '8');
+
+
+grant select on cliente to anon;
