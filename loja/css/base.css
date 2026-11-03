@@ -2,6 +2,7 @@
 
 body{
     background-color: #f2d489;
+    font-family: var(--fonte);
 }
 
 input{
@@ -33,4 +34,5 @@ button:hover{
 a{
     color: #82510d;
     font-size: 13px;
+    text-decoration: none;
 }
