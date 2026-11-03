@@ -1,38 +1,21 @@
-const { createClient } = supabase;
-
-const banco = createClient(
-    config.url,
-    config.publishableKey
-)
-
-
-
+const SUPABASE_URL = 'https://dlzbjomtmquobzwzzfot.supabase.co/rest/v1/';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_UZujLvs6Ne2v5RtDVuN_iQ_dNOghJn4';
 
 // LOGIN
 async function entrar() {
-    const email = config.email
 
-    const senha = config.senha
+    try{
+    const resposta =
+        await fetch(
 
-    const { data, error } =
-        await banco.auth.signInWithPassword({
-            email: email,
-            password: senha
-        });
-
-    if (error) {
-        console.log( error.message);
-        return;
+        )
     }
-    console.log(data.user.email);
+    catch(erro) {
+        'blabla'.textContent = `Não foi possível fazer login: ${erro.message}`
+    }
 }
 
 async function main() {
-    await entrar();
-    let personagens = await buscarPersonagens();
-    let item = await getItem();
-    console.log(item);
-    console.log(personagens);
 
 }
 
