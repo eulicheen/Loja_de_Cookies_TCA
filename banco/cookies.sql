@@ -22,8 +22,8 @@ CREATE TABLE cliente(
 CREATE TABLE cargo(
     id SERIAL PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
-        -- cargo CHECK (cargo IN ('administrador', 'cliente')),
-    descricao TEXT
+    descricao TEXT,
+    -- cargo CHECK (cargo IN ('administrador', 'cliente'))
 );
 
 CREATE TABLE permissoes(
@@ -58,9 +58,10 @@ CREATE TABLE administrador(
 -- VALUES
 -- ()
 
--- INSERT INTO cargo(cargo, nome, descricao)
--- VALUES
--- ()
+INSERT INTO cargo(nome, descricao)
+VALUES
+('Cliente', 'Faz pedidos pelo site'),
+('Administrador', 'Administra pedidos, produtos, ingredientes e estoque');
 
 
 
@@ -188,6 +189,3 @@ VALUES
 ('17', '5'),
 ('18', '7'),
 ('19', '8');
-
-
-grant select on cliente to anon;
