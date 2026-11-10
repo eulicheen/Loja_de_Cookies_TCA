@@ -1,10 +1,10 @@
-# 🍪 Bell's Cookies
+# 🔪 Ficha Brutal RPG
 
-Site de uma loja de cookies artesanais, onde o cliente pode criar uma conta, entrar, ver uma conta e fazer pedidos.
+Site com sistema de login para mestre e player poderem editar suas fichas e campanhas.
 
 ## Sobre o projeto
 
-A **Bell's Cookies** é um projeto feito para praticar banco de dados. 
+A **Ficha Brutal RPG** é um projeto feito para praticar banco de dados. 
 O site atualmente exibe apenas uma tela de login.
 
 ## Linguagens utilizadas
