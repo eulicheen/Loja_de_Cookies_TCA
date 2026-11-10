@@ -1,3 +1,9 @@
 :root{
+    --cor-fundo: #000000;
+    --botao: #9c0000;
+    --botao-claro: #c50d0d;
+    --botao-claro-palavra: #2c2c2c;
+    --cor-input-a: #830202;
+    --fundo-login: #ffffff;
     --fonte: "Courier Prime", monospace;
 }

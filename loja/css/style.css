@@ -1,7 +1,7 @@
 /*elementos base do html*/
 
 body{
-    background-color: #f2d489;
+    background-color: var(--cor-fundo);
     font-family: var(--fonte);
 }
 
@@ -13,12 +13,13 @@ input{
 }
 
 input:hover{
-    color: #774f17;
+    color: var(--cor-input-a);
 }
 
 button{
-    background-color: #774f17;
-    border: 3px solid #774f17;
+    background-color: var(--botao);
+    border: 2px solid var(--botao);
+    box-shadow: 0px 3px 7px;
     border-radius: 15px;
     padding: 10px;
     width: 100%;
@@ -26,13 +27,13 @@ button{
 }
 
 button:hover{
-    background-color: #8e6226;
-    border-color: #8e6226;
-    color: #2c2c2c;
+    background-color: var(--botao-claro);
+    border-color: var(--botao-claro);
+    color: var(--botao-claro-palavra);
 }
 
 a{
-    color: #82510d;
+    color: var(--cor-input-a);
     font-size: 13px;
     text-decoration: none;
 }
@@ -41,11 +42,11 @@ a{
 /*ids e classes*/
 
 .tela-login{
-    background-color: white;
+    background-color: var(--fundo-login);
     position: absolute;
 
-    border: 3px solid white;
-    border-radius: 30px;
+    border: 3px solid var(--fundo-login);
+    border-radius: 20px;
 
 
     top: 50%;
