@@ -1,68 +1,57 @@
-// import {SUPABASE_URL} from "./env.js";
-// import {SUPABASE_PUBLISHABLE_KEY} from "./env.js";
+const SUPABASE_URL_BASE = 'https://dlzbjomtmquobzwzzfot.supabase.co';
+const AUTENTICACAO_URL = `${SUPABASE_URL_BASE}/auth/v1`
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_UZujLvs6Ne2v5RtDVuN_iQ_dNOghJn4';
 
-// // Cadastro
-// const form = document.querySelector('#form');
-// const email = document.querySelector('#email');
-// const senha = document.querySelector('#senha');
+// Cadastro
+const form = document.querySelector('#form');
+const email = document.querySelector('#email');
+const senha = document.querySelector('#senha');
+const submit = document.querySelector('#submit');
 
-// let armazenar = [];
+let armazenar = [];
 
-// async function cadastro() {
+form.addEventListener('submit', cadastro);
 
-//     try{
-//     const registro = await fetch(
-//         `${SUPABASE_URL}/rest/v1/usuarios?select=*`,
-//         {
-//           headers: {
-//             apikey: SUPABASE_PUBLISHABLE_KEY,
-//             Accept: 'application/json'
-//           }
-//         }
-//       );
+async function cadastro(i) {
 
-//       armazenar = await registro.json();
+     i.preventDefault(); //impede o navegador de recarregar a página enquanto tenta logar
 
-//     }
-//     catch(erro) {
-//         email.textContent = `Algo deu errado ${erro.message}`
-//         senha.textContent = `Algo deu errado ${erro.message}`
-//     }
-// }
-
-
-// form.addEventListener('submit', updateConta);
-
-
-// // armazenar contas
-// async function updateConta(conta) {
-//     conta.preventDefault(); // impede o html de recarregar a página inteira
+    const dadosCadastro = { email: email.value, password: senha.value };
             
-//   const id = registroId.value;
-//   const infos = { 
-//       email: email.value,
-//       senha: senha.value
-//    };
+    try {
+    const resposta = await fetch(AUTENTICACAO_URL, {
+        method: 'POST',
+        headers: {
+        apikey: SUPABASE_PUBLISHABLE_KEY,
+        'Content-Type': 'application/json',
+        Prefer: 'return=representation'
+        },
+        body: JSON.stringify(dadosCadastro)
+    }
+    );
 
-//     try {
-//     const url = new URL(`${SUPABASE_URL}`)
-//     url.searchParams.set('id', `eq.${id}`)
-//     const registro = await fetch(url, {
-//                   method: 'PATCH',
-//                   headers: {    
-//                   apikey: SUPABASE_PUBLISHABLE_KEY,
-//                   'Content-Type': 'application/json',  
-//                   Prefer:'return=representation'
-//           },
-//                   body: JSON.stringify(infos)
-//               });
-//               const updatedCadastro = await response.json();
-              
-//               updateConta(); // Atualiza a lista de notícias após a alteração
-//           } catch (error) {
-//               console.error('Erro ao alterar notícia:', error);
-//           }
-//       }
+    const dados = await resposta.json();
+
+    if (!resposta.ok) {
+      throw new Error(dados.message || `Erro HTTP: ${resposta.status}`);
+    }
+
+    console.log('Conta criada:', dados);
+
+    armazenar.push(dados[0]);
+    form.reset();
+
+    }
+        
+    catch (error) {
+            console.error('Erro ao criar conta:', error);
+        }
+    }
+
+
+
+
+
 
 // async function main() {
 //     await cadastro();

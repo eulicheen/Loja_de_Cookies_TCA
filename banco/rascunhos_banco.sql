@@ -74,8 +74,3 @@ create policy "Authenticated users can update scores"
 
 
 
-
-
-
-
-
